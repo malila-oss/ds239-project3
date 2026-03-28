@@ -1,26 +1,33 @@
 # DS239 Project 3 – PCA and Regression
 
 ## Problem
-The goal of this project is to predict house sale prices using the Ames Housing dataset. 
-This is a regression problem where the response variable is SalePrice.
+The goal of this project is to predict the probability that a job will be automated by 2030. This is a regression problem where the target variable is Automation_Probability_2030.
 
 ## Dataset
-Ames Housing Dataset
-https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data
+AI Impact on Jobs 2030 Dataset
 
-## Current Progress
-- Loaded and inspected dataset
-- Identified missing values
-- Cleaned numeric and categorical data
+## Cleaning Process
+- Filled missing numeric values with median
+- Filled missing categorical values with mode
 - One-hot encoded categorical variables
 - Scaled features using StandardScaler
-- Applied PCA using SVD
-- Generated explained variance analysis
+- Removed Risk_Category to avoid data leakage
 
-## Next Steps
-- Train/test split
-- Linear regression model
-- kNN model
-- Random forest model
-- Model comparison using RMSE and R²
-- Condition number analysis
+## PCA Analysis
+- PCA performed using SVD
+- Selected k components to retain 90% variance
+- Reduced dimensionality from original feature space
+
+## Model Comparison
+Models used:
+- Linear Regression
+- k-Nearest Neighbors
+- Random Forest
+
+Evaluation metrics:
+- RMSE
+- MAE
+- R²
+
+## Conclusion
+Random Forest performed best overall. PCA reduced dimensionality but did not significantly improve model performance. The dataset shows some multicollinearity based on the condition number.
